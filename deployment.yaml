@@ -1,1 +1,23 @@
 # Empty File for the creation of NginX kubernetes cluster which I will later use for Argo CD deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abc
+spec:
+  selector:
+    matchLabels:
+      app: abc
+  template:
+    metadata:
+      labels:
+        app: abc
+    spec:
+      containers:
+      - name: 
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: <Port>
